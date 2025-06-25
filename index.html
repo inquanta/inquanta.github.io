@@ -4,68 +4,78 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inquanta – Track What Matters</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="assets/logo.png" />
+    <title>Inquanta - Track What Matters</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" href="/assets/logo.png" />
 </head>
 
 <body>
     <main>
-        <section id="header">
-            <h1 id="inquanta"><img src="assets/logo.png" alt="Inquanta Logo"
-                    style="height: 2em; vertical-align: middle;">
-                Inquanta</h1>
-            <p><strong>Measure your progress. Master your potential.</strong></p>
-            <p>A contribution-tracking bot for Discord communities that value real growth.</p>
+        <header>
+            <h1 id="inquanta">
+                <img src="/assets/logo.png" alt="Inquanta Logo" style="height: 2em; vertical-align: middle;">
+                Inquanta
+            </h1>
+            <div class="main-links">
+                <a href="/">Home</a>
+                <a href="/docs/">Documentation</a>
+            </div>
+        </header>
+
+        <section id="toc-section">
+            <h4 id="toc-toggle" aria-expanded="false" aria-controls="toc-list">
+                Table of Contents
+            </h4>
+            <div id="toc-list" style="max-height: 0px;">
+                <ul>
+                    <li><a href="#about-section">About Inquanta</a></li>
+                    <li><a href="#upcoming-features-section">Upcoming Features</a></li>
+                    <li><a href="#support-section">Support Inquanta</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="about-section">
+            <h2 id="about-title">📖 | About Inquanta</h2>
+            <p><strong>Inquanta</strong> helps communities track measurable contributions like words written, tasks
+                completed, or hours studied — all through Discord.</p>
+            <p>
+                <strong>
+                    How does it work?
+                </strong>
+            </p>
+            <ul>
+                <li>
+                    Iquanta features a simple, clean slash-command interface for its users.
+                </li>
+                <li>
+                    Server admins can create custom counters for any measurable activity with
+                    custom units. For example, you can create a counter for "words" or "hours" to track
+                    writing or studying progress.
+                </li>
+                <li>
+                    Users can contribute to these counters by adding their progress, which updates their
+                    contribution totals.
+                </li>
+                <li>
+                    The bot maintains a leaderboard for each counter, allowing users to see how they rank
+                    against others in the community, fostering a sense of competition and motivation.
+                </li>
+                <li>
+                    At the same time, we understand that not all users act in good faith. Inquanta includes features to
+                    ban users from contributing to specific counters, ensuring that the integrity of your community is
+                    maintained.
+                </li>
+            </ul>
             <p class="main-links">
                 <a href="#">Invite the Bot</a> &bull;
                 <a href="https://discord.gg/inquanta">Join Support Server</a> &bull;
                 <a href="https://ko-fi.com/inquanta">Donate on Ko-fi</a>
             </p>
-        </section>
-
-        <section id="table-of-contents">
-            <h2 id="toc-toggle" aria-expanded="false" aria-controls="toc-list">
-                🔽 | Table of Contents
-            </h2>
-            <div id="toc-list" style="max-height: 0px;">
-                <ul id="table-of-contents">
-                    <li><a href="#inquanta">Inquanta</a></li>
-                    <li><a href="#toc-toggle">Table of Contents</a></li>
-                    <li><a href="#about-title">About Inquanta</a></li>
-                    <li><a href="#upcoming">Upcoming Features</a></li>
-                    <li><a href="#commands-title">Commands</a>
-                        <ul>
-                            <li><a href="#add">/add</a></li>
-                            <li><a href="#leaderboard">/leaderboard</a></li>
-                            <li><a href="#view-contri">/view-contri</a></li>
-                            <li><a href="#reset">/reset</a></li>
-                            <li><a href="#admin-counter-create">/admin counter create</a></li>
-                            <li><a href="#admin-counter-delete">/admin counter delete</a></li>
-                            <li><a href="#admin-counter-reset">/admin counter reset</a></li>
-                            <li><a href="#admin-user-ban">/admin user ban</a></li>
-                            <li><a href="#admin-user-unban">/admin user unban</a></li>
-                            <li><a href="#admin-user-reset">/admin user reset</a></li>
-                            <li><a href="#support-command">/support</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#support">Support Inquanta</a></li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="about">
-            <h2 id="about-title">📖 | About Inquanta</h2>
-            <p><strong>Inquanta</strong> helps communities track measurable contributions like words written, tasks
-                completed, or hours studied — all through Discord.</p>
-            <ul>
-                <li>Create custom Counters with units like "words" or "hours"</li>
-                <li>Let users contribute and climb leaderboards</li>
-                <li>Clean slash-command interface</li>
-                <li>Event-based and global counters planned</li>
-            </ul>
-            <blockquote>This project is under active development.<br>Features like auto-reset, global counters, and a
-                web dashboard are coming soon.</blockquote>
+            <blockquote>
+                This project is under active development.<br>
+                Features like auto-reset, global counters, and a web dashboard are coming soon.
+            </blockquote>
         </section>
 
         <section id="upcoming-features-section">
@@ -87,88 +97,53 @@
             <p>Graphs and trends to visualize user and community growth.</p>
         </section>
 
-        <section id="commands-section">
-            <h2 id="commands-title">💬 | Commands</h2>
-            <p>
-                Inquanta uses a slash-command interface for easy access.
-            </p>
-            <p>
-                An argument enclosed in square brackets <code>[ ]</code> is required, while an argument in parentheses
-                <code>( )</code> is optional.
-            </p>
-            <p>
-                A user who has Administrator permission or Manager Server permission is considered an admin.
-            </p>
-            <h3 id="add">/add [counter] [count]</h3>
-            <p>Adds the specified amount to your contribution total.<br><strong>Example:</strong>
-                <code>/add WritingMarathon 1200</code>
-            </p>
-
-            <h3 id="leaderboard">/leaderboard [counter]</h3>
-            <p>Displays the leaderboard for the specified counter.<br><strong>Example:</strong>
-                <code>/leaderboard WritingMarathon</code>
-            </p>
-
-            <h3 id="view-contri">/view-contri</h3>
-            <p>Shows a breakdown of your contributions.<br><strong>Example:</strong> <code>/view-contri</code></p>
-
-            <h3 id="reset">/reset [counter]</h3>
-            <p>Resets your contribution.<br><strong>Example:</strong> <code>/reset WritingMarathon</code></p>
-
-            <h3 id="admin-counter-create">/admin counter create [name] [unit] (description)</h3>
-            <p>Creates a new counter.<br><strong>Example:</strong>
-                <code>/admin counter create WritingMarathon words</code>
-            </p>
-
-            <h3 id="admin-counter-delete">/admin counter delete [name]</h3>
-            <p>Deletes a specified counter.<br><strong>Example:</strong>
-                <code>/admin counter delete WritingMarathon</code>
-            </p>
-
-            <h3 id="admin-counter-reset">/admin counter reset [name]</h3>
-            <p>Resets all users' contributions.<br><strong>Example:</strong>
-                <code>/admin counter reset WritingMarathon</code>
-            </p>
-
-            <h3 id="admin-user-ban">/admin user ban [user] [counter]</h3>
-            <p>Bans a user from contributing.<br><strong>Example:</strong>
-                <code>/admin user ban @fancy3081 WritingMarathon</code>
-            </p>
-
-            <h3 id="admin-user-unban">/admin user unban [user] [counter]</h3>
-            <p>Unbans a previously banned user.<br><strong>Example:</strong>
-                <code>/admin user unban @fancy3081 WritingMarathon</code>
-            </p>
-
-            <h3 id="admin-user-reset">/admin user reset [user] [counter]</h3>
-            <p>Resets a specific user's contribution.<br><strong>Example:</strong>
-                <code>/admin user reset @fancy3081 WritingMarathon</code>
-            </p>
-
-            <h3 id="support-command">/support</h3>
-            <p>Shows support links.<br><strong>Example:</strong> <code>/support</code></p>
-        </section>
-
         <section id="support-section">
             <h2 id="support-title">❤️ | Support Inquanta</h2>
+            <h3>You need help</h3>
+            <p>If you need assistance with Inquanta:</p>
             <ul>
-                <li><a href="https://ko-fi.com/inquanta">Donate on Ko-fi</a></li>
-                <li><a href="https://discord.gg/inquanta">Join the Support Server</a></li>
+                <li>
+                    <strong>Join our support server:</strong>
+                    <a href="https://discord.gg/inquanta">https://discord.gg/inquanta</a>.
+                </li>
+                <li>
+                    <strong><code>#support</code> channel:</strong>
+                    Ask your questions in the <code>#support</code> channel of our support server, where both the
+                    community and the developers can assist you.
+                </li>
+                <li>
+                    <strong>Check the documentation:</strong>
+                    Visit our <a href="/docs/">documentation</a> for guides and FAQs
+                </li>
+            </ul>
+            <h3>
+                You want to help
+            </h3>
+            <ul>
+                <li>
+                    <strong>Join our support server:</strong>
+                    <a href="https://discord.gg/inquanta">https://discord.gg/inquanta</a>.
+                </li>
+                <li><strong>Report bugs:</strong> Found an issue? Let us know in our support server</li>
+                <li><strong>Feature requests:</strong> Share your ideas for new features with our community</li>
+                <li><strong>Donate:</strong> <a href="https://ko-fi.com/inquanta">Support us on Ko-fi</a> to help keep
+                    the bot running</li>
+                <li><strong>Spread the word: Tell other communities and your friends about Inquanta.</strong></li>
             </ul>
             <p>Your support helps keep the bot running and growing.</p>
         </section>
     </main>
-    <script>
-        const tocToggle = document.getElementById('toc-toggle');
-        const tocList = document.getElementById('toc-list');
-        tocToggle.addEventListener('click', function () {
-            const isOpen = tocList.style.maxHeight !== '0px';
-            tocList.style.opacity = isOpen ? '0' : '1';
-            tocList.style.maxHeight = isOpen ? '0px' : '600px';
-            tocToggle.textContent = isOpen ? '🔽 | Table of Contents' : '🔼 | Table of Contents';
-            tocToggle.setAttribute('aria-expanded', !isOpen);
-        });
-    </script>
 </body>
+
+<script>
+    const tocToggle = document.getElementById('toc-toggle');
+    const tocList = document.getElementById('toc-list');
+    tocToggle.addEventListener('click', function () {
+        const isOpen = tocList.style.maxHeight !== '0px';
+        tocList.style.maxHeight = isOpen ? '0px' : '600px';
+        tocList.style.opacity = isOpen ? '0' : '1';
+        tocToggle.setAttribute('aria-expanded', !isOpen);
+    });
+</script>
 
 </html>

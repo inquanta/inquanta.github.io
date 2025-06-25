@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentation | Inquanta</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" href="/assets/logo.png" />
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1 id="inquanta">
+                <img src="/assets/logo.png" alt="Inquanta Logo" style="height: 2em; vertical-align: middle;">
+                Inquanta
+            </h1>
+            <div class="main-links">
+                <a href="/">Home</a>
+                <a href="/docs/">Documentation</a>
+            </div>
+        </header>
+
+        <section id="toc-section">
+            <h4 id="toc-toggle" aria-expanded="false" aria-controls="toc-list">
+                Table of Contents
+            </h4>
+            <div id="toc-list" style="max-height: 0px;">
+                <ul>
+                    <li><a href="#getting-started">Getting Started</a></li>
+                    <li><a href="#command-reference">Command Reference</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="getting-started">
+            <h2>📚 | Getting Started with Inquanta</h2>
+            <p>
+                New to Inquanta? Our comprehensive guide will walk you through everything you need to know to get your
+                community tracking contributions effectively.
+            </p>
+            <p>
+                Learn how to set up counters, understand the core concepts, and discover best practices for managing
+                your Discord community's progress tracking. Whether you're an admin setting up your first counter or
+                a user looking to understand how contributions work, this guide has you covered.
+            </p>
+            <p>
+                <a href="/docs/guide.html">Read the Complete Guide</a>
+            </p>
+        </section>
+
+        <section id="command-reference">
+            <h2>⚡ | Command Reference</h2>
+            <p>
+                Looking for a specific command or need a quick reference? Our command documentation provides detailed
+                information about every Inquanta slash command.
+            </p>
+            <p>
+                From basic user commands like <code>/add</code> and <code>/leaderboard</code> to advanced admin
+                features for managing counters and users, find syntax examples and explanations for all available
+                functionality.
+            </p>
+            <p>
+                <a href="/docs/commands.html">View All Commands</a>
+            </p>
+        </section>
+    </main>
+</body>
+
+<script>
+    const tocToggle = document.getElementById('toc-toggle');
+    const tocList = document.getElementById('toc-list');
+    tocToggle.addEventListener('click', function () {
+        const isOpen = tocList.style.maxHeight !== '0px';
+        tocList.style.maxHeight = isOpen ? '0px' : '600px';
+        tocList.style.opacity = isOpen ? '0' : '1';
+        tocToggle.setAttribute('aria-expanded', !isOpen);
+    });
+</script>
+
+</html>

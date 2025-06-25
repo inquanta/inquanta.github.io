@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Command reference | Inquanta</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" href="/assets/logo.png" />
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1 id="inquanta">
+                <img src="/assets/logo.png" alt="Inquanta Logo" style="height: 2em; vertical-align: middle;">
+                Inquanta
+            </h1>
+            <div class="main-links">
+                <a href="/">Home</a>
+                <a href="/docs/">Documentation</a>
+            </div>
+        </header>
+
+        <section id="toc-section">
+            <h4 id="toc-toggle" aria-expanded="false" aria-controls="toc-list">
+                Table of Contents
+            </h4>
+            <div id="toc-list" style="max-height: 0px;">
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#user-commands">User Commands</a></li>
+                    <li><a href="#admin-commands">Admin Commands</a></li>
+                    <li><a href="#utility-commands">Utility Commands</a></li>
+                    <li><a href="#command-syntax">Command Syntax</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="overview">
+            <h2>⚡ | Command Reference</h2>
+            <p>
+                Inquanta uses slash commands for all interactions. This reference provides complete documentation
+                for every available command, including syntax, examples, and permission requirements.
+            </p>
+
+            <h3 id="command-syntax">Command Syntax</h3>
+            <p>
+                Understanding command syntax:
+            </p>
+            <ul>
+                <li><code>[argument]</code> - Required parameter</li>
+                <li><code>(argument)</code> - Optional parameter</li>
+            </ul>
+
+            <h3>Permission Levels</h3>
+            <ul>
+                <li><strong>User:</strong> Available to all server members</li>
+                <li><strong>Admin:</strong> Requires "Administrator" or "Manage Server" permissions</li>
+            </ul>
+        </section>
+
+        <section id="user-commands">
+            <h2>👤 | User Commands</h2>
+            <p>
+                Commands available to all users for tracking contributions and viewing progress.
+            </p>
+
+            <h3 id="add">/add [counter] [amount]</h3>
+            <p>
+                <strong>Permission:</strong> User<br>
+                <strong>Description:</strong> Adds the specified amount to your contribution total for a counter.
+            </p>
+            <p>
+                <strong>Parameters:</strong>
+            </p>
+            <ul>
+                <li><code>counter</code> - Name of the counter to contribute to</li>
+                <li><code>amount</code> - Positive number to add to your total</li>
+            </ul>
+            <p>
+                <strong>Examples:</strong>
+            </p>
+            <ul>
+                <li><code>/add WritingMarathon 1200</code> - Add 1200 words to WritingMarathon</li>
+                <li><code>/add StudyTime 2.5</code> - Add 2.5 hours to StudyTime</li>
+                <li><code>/add ExerciseMinutes 45</code> - Add 45 minutes to ExerciseMinutes</li>
+            </ul>
+            <blockquote>
+                Note: You can only contribute to counters that exist in your current server.
+            </blockquote>
+
+            <h3 id="leaderboard">/leaderboard [counter]</h3>
+            <p>
+                <strong>Permission:</strong> User<br>
+                <strong>Description:</strong> Displays the leaderboard for the specified counter, showing top contributors and your ranking.
+            </p>
+            <p>
+                <strong>Parameters:</strong>
+            </p>
+            <ul>
+                <li><code>counter</code> - Name of the counter to view leaderboard for</li>
+            </ul>
+            <p>
+                <strong>Example:</strong>
+            </p>
+            <ul>
+                <li><code>/leaderboard WritingMarathon</code> - View WritingMarathon leaderboard</li>
+            </ul>
+
+            <h3 id="view-contri">/view-contri</h3>
+            <p>
+                <strong>Permission:</strong> User<br>
+                <strong>Description:</strong> Shows a breakdown of all your contributions across different counters.
+            </p>
+            <p>
+                <strong>Example:</strong>
+            </p>
+            <ul>
+                <li><code>/view-contri</code> - View all your contributions</li>
+            </ul>
+            <blockquote>
+                Note: This command lists all counters you have contributed to, across all servers.
+            </blockquote>
+
+            <h3 id="reset">/reset [counter]</h3>
+            <p>
+                <strong>Permission:</strong> User<br>
+                <strong>Description:</strong> Resets your contribution total for a specific counter to zero.
+            </p>
+            <p>
+                <strong>Parameters:</strong>
+            </p>
+            <ul>
+                <li><code>counter</code> - Name of the counter to reset your progress for</li>
+            </ul>
+            <p>
+                <strong>Example:</strong>
+            </p>
+            <ul>
+                <li><code>/reset WritingMarathon</code> - Reset your WritingMarathon progress</li>
+            </ul>
+            <blockquote class="warning">
+                Warning: This action cannot be undone. Your contribution total will be permanently reset to 0.
+            </blockquote>
+        </section>
+
+        <section id="admin-commands">
+            <h2>🛠️ | Admin Commands</h2>
+            <p>
+                Commands for server administrators to manage counters and users.
+            </p>
+
+            <h3 id="admin-counter-create">/admin counter create [name] [unit] (description)</h3>
+            <p>
+                <strong>Permission:</strong> Admin<br>
+                <strong>Description:</strong> Creates a new counter for tracking contributions.
+            </p>
+            <p>
+                <strong>Parameters:</strong>
+            </p>
+            <ul>
+                <li><code>name</code> - Unique name for the counter (no spaces)</li>
+                <li><code>unit</code> - What you're measuring (words, hours, pages, etc.)</li>
+                <li><code>description</code> - Optional description explaining the counter's purpose</li>
+            </ul>
+            <p>
+                <strong>Examples:</strong>
+            </p>
+            <ul>
+                <li><code>/admin counter create WritingMarathon words "Track daily writing progress"</code></li>
+                <li><code>/admin counter create StudyTime hours "Hours spent studying"</code></li>
+                <li><code>/admin counter create ReadingPages pages</code></li>
+            </ul>
+
+            <h3 id="admin-counter-delete">/admin counter delete [name]</h3>
+            <p>
+                <strong>Permission:</strong> Admin<br>
+                <strong>Description:</strong> Permanently deletes a counter and all associated contribution data.
+            </p>
+            <p>
+                <strong>Parameters:</strong>
+            </p>
+            <ul>
+                <li><code>name</code> - Name of the counter to delete</li>
+            </ul>
+            <p>
+                <strong>Example:</strong>
+            </p>
+            <ul>
+                <li><code>/admin counter delete WritingMarathon</code> - Delete WritingMarathon counter</li>
+            </ul>
+            <blockquote class="warning">
+                Warning: This action cannot be undone. All user contributions to this counter will be permanently lost.
+            </blockquote>
+
+            <h3 id="admin-counter-reset">/admin counter reset [name]</h3>
+            <p>
+                <strong>Permission:</strong> Admin<br>
+                <strong>Description:</strong> Resets all users' contributions for a specific counter to zero.
+            </p>
+            <p>
+                <strong>Parameters:</strong>
+            </p>
+            <ul>
+                <li><code>name</code> - Name of the counter to reset</li>
+            </ul>
+            <p>
+                <strong>Example:</strong>
+            </p>
+            <ul>
+                <li><code>/admin counter reset WritingMarathon</code> - Reset all WritingMarathon contributions</li>
+            </ul>
+            <blockquote class="success">
+                Use case: Perfect for monthly challenges or starting fresh competitions.
+            </blockquote>
+
+            <h3>User Management</h3>
+
+            <h3 id="admin-user-ban">/admin user ban [user] [counter]</h3>
+            <p>
+                <strong>Permission:</strong> Admin<br>
+                <strong>Description:</strong> Prevents a user from contributing to a specific counter.
+            </p>
+            <p>
+                <strong>Parameters:</strong>
+            </p>
+            <ul>
+                <li><code>user</code> - Discord user to ban (mention or user ID)</li>
+                <li><code>counter</code> - Name of the counter to ban them from</li>
+            </ul>
+            <p>
+                <strong>Example:</strong>
+            </p>
+            <ul>
+                <li><code>/admin user ban @username WritingMarathon</code> - Ban user from WritingMarathon</li>
+            </ul>
+            <blockquote>
+                Note: This simply prevents the user from contributing futhur. This does not delete their previous contributions.
+            </blockquote>
+            <blockquote>
+                Note: Banned users can still view leaderboards but cannot add contributions to that counter.
+            </blockquote>
+
+            <h3 id="admin-user-unban">/admin user unban [user] [counter]</h3>
+            <p>
+                <strong>Permission:</strong> Admin<br>
+                <strong>Description:</strong> Removes a ban, allowing a user to contribute to a counter again.
+            </p>
+            <p>
+                <strong>Parameters:</strong>
+            </p>
+            <ul>
+                <li><code>user</code> - Discord user to unban (mention or user ID)</li>
+                <li><code>counter</code> - Name of the counter to unban them from</li>
+            </ul>
+            <p>
+                <strong>Example:</strong>
+            </p>
+            <ul>
+                <li><code>/admin user unban @username WritingMarathon</code> - Unban user from WritingMarathon</li>
+            </ul>
+
+            <h3 id="admin-user-reset">/admin user reset [user] [counter]</h3>
+            <p>
+                <strong>Permission:</strong> Admin<br>
+                <strong>Description:</strong> Resets a specific user's contribution total for a counter to zero.
+            </p>
+            <p>
+                <strong>Parameters:</strong>
+            </p>
+            <ul>
+                <li><code>user</code> - Discord user whose progress to reset (mention or user ID)</li>
+                <li><code>counter</code> - Name of the counter to reset their progress for</li>
+            </ul>
+            <p>
+                <strong>Example:</strong>
+            </p>
+            <ul>
+                <li><code>/admin user reset @username WritingMarathon</code> - Reset user's WritingMarathon progress</li>
+            </ul>
+            <blockquote class="warning">
+                Warning: This action cannot be undone. The user's contribution total for this counter will be permanently reset to 0.
+            </blockquote>
+        </section>
+
+        <section id="utility-commands">
+            <h2>🔧 | Utility Commands</h2>
+            <p>
+                General utility commands for getting help and support.
+            </p>
+
+            <h3 id="support-command">/support</h3>
+            <p>
+                <strong>Permission:</strong> User<br>
+                <strong>Description:</strong> Displays helpful links for getting support with Inquanta.
+            </p>
+            <p>
+                <strong>Example:</strong>
+            </p>
+            <ul>
+                <li><code>/support</code> - Show support information</li>
+            </ul>
+            <p>
+                This command provides links to:
+            </p>
+            <ul>
+                <li>Support Discord server</li>
+                <li>Documentation</li>
+                <li>Donate money</li>
+            </ul>
+        </section>
+
+        <section id="tips">
+            <h2>💡 | Command Tips</h2>
+
+            <h3>Best Practices</h3>
+            <ul>
+                <li><strong>Counter Names:</strong> Use clear, descriptive names without spaces</li>
+                <li><strong>Units:</strong> Choose units that make sense for your activity</li>
+                <li><strong>Contributions:</strong> Add contributions regularly rather than in large batches</li>
+                <li><strong>Admin Actions:</strong> Always communicate changes to your community</li>
+            </ul>
+
+            <h3>Getting More Help</h3>
+            <p>
+                If you need additional assistance:
+            </p>
+            <ul>
+                <li>Use <code>/support</code> for quick access to help resources</li>
+                <li>Check the <a href="/docs/guide.html">complete guide</a> for detailed explanations</li>
+                <li>Join our <a href="https://discord.gg/inquanta">support server</a> for community help</li>
+            </ul>
+        </section>
+    </main>
+</body>
+
+<script>
+    const tocToggle = document.getElementById('toc-toggle');
+    const tocList = document.getElementById('toc-list');
+    tocToggle.addEventListener('click', function () {
+        const isOpen = tocList.style.maxHeight !== '0px';
+        tocList.style.maxHeight = isOpen ? '0px' : '600px';
+        tocList.style.opacity = isOpen ? '0' : '1';
+        tocToggle.setAttribute('aria-expanded', !isOpen);
+    });
+</script>
+
+</html>

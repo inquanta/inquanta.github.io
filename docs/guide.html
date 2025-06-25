@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guide | Inquanta</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" href="/assets/logo.png" />
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1 id="inquanta">
+                <img src="/assets/logo.png" alt="Inquanta Logo" style="height: 2em; vertical-align: middle;">
+                Inquanta
+            </h1>
+            <div class="main-links">
+                <a href="/">Home</a>
+                <a href="/docs/">Documentation</a>
+            </div>
+        </header>
+
+        <section id="toc-section">
+            <h4 id="toc-toggle" aria-expanded="false" aria-controls="toc-list">
+                Table of Contents
+            </h4>
+            <div id="toc-list" style="max-height: 0px;">
+                <ul>
+                    <li><a href="#what-is-inquanta">What is Inquanta?</a></li>
+                    <li><a href="#getting-started">Getting Started</a></li>
+                    <li><a href="#basic-concepts">Basic Concepts</a></li>
+                    <li><a href="#best-practices">Best Practices</a></li>
+                    <li><a href="#troubleshooting">Troubleshooting</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="what-is-inquanta">
+            <h2>📖 | What is Inquanta?</h2>
+            <p>
+                Inquanta is a Discord bot designed to help communities track measurable contributions and progress.
+                Whether your community is focused on writing, studying, exercise, or any other quantifiable activity,
+                Inquanta provides the tools to measure, track, and celebrate achievements together.
+            </p>
+            <p>
+                The bot transforms individual efforts into community-wide initiatives through:
+            </p>
+            <ul>
+                <li><strong>Custom Counters:</strong> Track any measurable activity with custom units</li>
+                <li><strong>Leaderboards:</strong> Foster healthy competition and motivation</li>
+                <li><strong>Simple Interface:</strong> Easy-to-use slash commands for all interactions</li>
+                <li><strong>Admin Controls:</strong> Comprehensive management tools for server administrators</li>
+            </ul>
+        </section>
+
+        <section id="getting-started">
+            <h2>🚀 | Getting Started</h2>
+
+            <h3>Step 1: Invite Inquanta to Your Server</h3>
+            <p>
+                To get started, you'll need to invite Inquanta to your Discord server. Visit our homepage and click
+                the "Invite the Bot" link. Make sure you have the necessary permissions to add bots to your server.
+            </p>
+
+            <h3>Step 2: Set Up Your First Counter</h3>
+            <p>
+                Once Inquanta is in your server, server administrators can create their first counter using:
+            </p>
+            <code>/admin counter create [name] [unit] (description)</code>
+            <p>
+                For example, to create a writing counter:
+            </p>
+            <code>/admin counter create WritingMarathon words "Track daily writing progress"</code>
+
+            <h3>Step 3: Start Contributing</h3>
+            <p>
+                Users can immediately begin adding their contributions:
+            </p>
+            <code>/add WritingMarathon 500</code>
+            <p>
+                This would add 500 words to the user's total in the WritingMarathon counter.
+            </p>
+        </section>
+
+        <section id="basic-concepts">
+            <h2>🎯 | Basic Concepts</h2>
+
+            <h3>Counters</h3>
+            <p>
+                Counters are the foundation of Inquanta. Each counter represents a specific type of activity your
+                community wants to track. Counters have:
+            </p>
+            <ul>
+                <li><strong>Name:</strong> A unique identifier for the counter</li>
+                <li><strong>Unit:</strong> What you're measuring (words, hours, pages, etc.)</li>
+                <li><strong>Description:</strong> Optional explanation of the counter's purpose. This is shown at the top of the leaderboard, above the top 10 contributors.
+                </li>
+            </ul>
+
+            <h3>Contributions</h3>
+            <p>
+                Contributions are the individual entries users make to counters. Inquanta maintains the running total of
+                every
+                user's contribution for each counter, and these totals are used to generate leaderboards.
+            </p>
+
+            <h3>Leaderboards</h3>
+            <p>
+                Leaderboards show how users rank against each other for specific counters. They're automatically
+                updated whenever users add contributions and help foster community engagement through friendly
+                competition.
+            </p>
+
+            <h3>Permissions</h3>
+            <p>
+                Inquanta recognizes three permission levels:
+            </p>
+            <ul>
+                <li><strong>Regular Users:</strong> Can add contributions, view leaderboards, and reset their own
+                    progress</li>
+                <li><strong>Server Admins:</strong> Users with "Administrator" or "Manage Server" permissions in a server who can
+                    create/delete counters and manage users on behalf of a server</li>
+                <li><strong>Inquanta Admins:</strong> Members of the Inquanta team, who can manage the bot</li>
+            </ul>
+        </section>
+
+        <section id="best-practices">
+            <h2>💡 | Best Practices</h2>
+
+            <h3>For Communities</h3>
+            <ul>
+                <li><strong>Set Clear Goals:</strong> Define what each counter is for and any community goals</li>
+                <li><strong>Encourage Participation:</strong> Celebrate milestones and achievements</li>
+                <li><strong>Be Inclusive:</strong> Design counters that accommodate different skill levels</li>
+                <li><strong>Regular Engagement:</strong> Host events or challenges around your counters</li>
+            </ul>
+
+            <h3>For Counter Design</h3>
+            <ul>
+                <li><strong>Meaningful Units:</strong> Choose units that accurately represent the activity</li>
+                <li><strong>Reasonable Scale:</strong> Avoid units that result in extremely large or small numbers</li>
+                <li><strong>Clear Purpose:</strong> Each counter should have a specific, well-defined goal</li>
+                <li><strong>Consistent Naming:</strong> Use a clear naming convention for multiple counters</li>
+            </ul>
+
+            <h3>For Users</h3>
+            <ul>
+                <li><strong>Honest Reporting:</strong> Only add contributions you've actually completed</li>
+                <li><strong>Regular Updates:</strong> Add contributions consistently rather than in large batches. This ensures that your statistics are accurate.</li>
+                <li><strong>Community Spirit:</strong> Use the leaderboards for motivation, not competition</li>
+                <li><strong>Ask Questions:</strong> Don't hesitate to ask administrators about counter rules</li>
+            </ul>
+
+            <h3>For Admins</h3>
+            <ul>
+                <li><strong>Clear Communication:</strong> Make sure all counter rules and guidelines are easily accessible to your community</li>
+                <li><strong>Monitor Activity:</strong> Watch for unusual or suspicious contribution patterns to maintain fairness</li>
+                <li><strong>Fair Moderation:</strong> Use bans only when necessary; issue warnings and resets before taking stronger actions</li>
+                <li><strong>Keep Records:</strong> Document any moderation actions for transparency and future reference</li>
+            </ul>
+        </section>
+
+        <section id="troubleshooting">
+            <h2>🔧 | Troubleshooting</h2>
+            In most cases, Inquanta should either work seamlessly or provide clear error messages if something goes
+            wrong. Here are some common issues and how to resolve them:
+
+            <h3>Common Issues</h3>
+
+            <h4>Can't Add Contributions</h4>
+            <ul>
+                <li>Verify you haven't been banned from that counter</li>
+            </ul>
+
+            <h4>Commands Not Working</h4>
+            <ul>
+                <li>Verify you have the required permissions for admin commands</li>
+                <li>Try refreshing Discord or restarting the app</li>
+            </ul>
+
+            <h4>Missing from Leaderboard</h4>
+            <ul>
+                <li>Wait a moment for the leaderboard to update</li>
+            </ul>
+
+
+            If these solutions don't work, file a bug report in our support server.
+
+            <h3>Getting Help</h3>
+            <p>
+                If you encounter issues not covered here:
+            </p>
+            <ul>
+                <li>Use <code>/support</code> to get help links</li>
+                <li>Join our support server: <a href="https://discord.gg/inquanta">https://discord.gg/inquanta</a></li>
+                <li>Ask in the <code>#support</code> channel</li>
+                <li>Check our <a href="/docs/commands.html">command reference</a> for syntax help</li>
+            </ul>
+
+            <blockquote>
+                Remember: Inquanta is under active development. If you encounter bugs or have feature requests,
+                we'd love to hear from you in our support server!
+            </blockquote>
+        </section>
+    </main>
+</body>
+
+<script>
+    const tocToggle = document.getElementById('toc-toggle');
+    const tocList = document.getElementById('toc-list');
+    tocToggle.addEventListener('click', function () {
+        const isOpen = tocList.style.maxHeight !== '0px';
+        tocList.style.maxHeight = isOpen ? '0px' : '600px';
+        tocList.style.opacity = isOpen ? '0' : '1';
+        tocToggle.setAttribute('aria-expanded', !isOpen);
+    });
+</script>
+
+</html>
