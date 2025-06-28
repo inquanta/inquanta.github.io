@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inquanta Setup Guide - How to Use the Contribution Tracking Bot</title>
     <link rel="stylesheet" href="/style.css" />
-    <link rel="icon" href="/assets/logo.png" />
+    <link rel="icon" href="/assets/logo/logo_128.png" />
 </head>
 
 <body>
     <main>
         <header>
             <h1 id="inquanta">
-                <img src="/assets/logo.png" alt="Inquanta Logo" style="height: 2em; vertical-align: middle;">
+                <img src="/assets/logo/logo_512.png" alt="Inquanta Logo" style="height: 2em; vertical-align: middle;">
                 Inquanta
             </h1>
             <div class="main-links">
@@ -72,16 +72,31 @@
             <p>
                 For example, to create a writing counter:
             </p>
-            <code>/admin counter create WritingMarathon words "Track daily writing progress"</code>
+            <code>/admin counter create name:Harvest of Tales unit:words description:Summer writing contest!</code><br>
+            <img class="example-asset" src="/assets/command_gifs/create-counter.gif" alt="A gif showing how to create a counter" />
 
             <h3>Step 3: Start Contributing</h3>
             <p>
                 Users can immediately begin adding their contributions:
             </p>
-            <code>/add WritingMarathon 500</code>
+            <code>/add counter:harvest of tales (words) amount:500</code><br>
+            <img class="example-asset" src="/assets/command_gifs/add.gif" alt="A gif showing how to add your contribution"/>
             <p>
                 This would add 500 words to the user's total in the WritingMarathon counter.
             </p>
+
+            <h3>Step 4: Use Leaderboards to Stay Competitive</h3>
+            <p>
+                Track your progress and see how you stack up against others by viewing the leaderboard for any counter:
+            </p>
+            <code>/leaderboard counter:harvest of tales (words)</code><br>
+            <img class="example-asset" src="/assets/command_gifs/leaderboard.gif" alt="A gif showing how to view the leaderboard" />
+            <p>
+                Leaderboards update automatically as users add contributions, making it easy to stay motivated and celebrate achievements together!
+            </p>
+            <blockquote>
+                The leaderboard shows the top 10 contributors for each counter, as well as the contribution of the user who requested it.   
+            </blockquote>
         </section>
 
         <section id="basic-concepts">
@@ -208,7 +223,7 @@
 
             <blockquote>
                 Remember: Inquanta is under active development. If you encounter bugs or have feature requests,
-                we'd love to hear from you in our support server!
+                we'd love to hear from you in our <a href="https://discord.gg/Nj4smPy6N3">support server!</a>
             </blockquote>
         </section>
     </main>

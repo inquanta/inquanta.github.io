@@ -155,6 +155,13 @@ header {
   flex-shrink: 0;
 }
 
+.example-asset {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
   body {
