@@ -162,6 +162,41 @@ header {
   margin-top: 1rem;
 }
 
+/* Inline styles from the <footer> element and its descendants */
+footer {
+  margin-top: 3rem;
+  padding: 2rem 0 1rem 0;
+  /* text-align: center; */
+  color: #bbb;
+  font-size: 0.98em;
+}
+
+footer hr {
+  border: none;
+  border-top: 1px solid #333;
+  margin-bottom: 1.5rem;
+}
+
+footer>div {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer a {
+  color: #ff9800;
+}
+
+footer>div:last-child {
+  margin-top: 0.5rem;
+}
+
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
   body {
@@ -200,6 +235,17 @@ header {
     margin: 0.2rem;
     padding: 0.5em 1.2em;
     font-size: 0.9rem;
+  }
+
+  /* Responsive footer: stack columns on small screens */
+  footer > div {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  footer ul {
+    margin-bottom: 1rem;
+    text-align: center;
   }
 }
 

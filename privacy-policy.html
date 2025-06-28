@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inquanta - Privacy Policy</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" href="/assets/logo/logo_128.png" />
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1 id="inquanta">
+                <img src="/assets/logo/logo_512.png" alt="Inquanta Logo" style="height: 2em; vertical-align: middle;">
+                Inquanta
+            </h1>
+            <div class="main-links">
+                <a href="/">Home</a>
+                <a href="/docs/">Documentation</a>
+            </div>
+        </header>
+
+        <section id="toc-section">
+            <h4 id="toc-toggle" aria-expanded="false" aria-controls="toc-list">
+                Table of Contents
+            </h4>
+            <div id="toc-list" style="max-height: 0px;">
+                <ul>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="privacy">
+            <h2>🔒 Inquanta Privacy Policy</h2>
+            <p><strong>Last Updated:</strong> June 27, 2025</p>
+            <p>We value user privacy and only store what is strictly necessary for the bot to function.</p>
+
+            <h3>1. Data We Collect</h3>
+            <ul>
+                <li><strong>User IDs</strong></li>
+                <li><strong>Contribution Data</strong>, i.e., Counts submitted via commands (e.g., 250 words, 2 hours).
+                </li>
+                <li><strong>Server IDs</strong></li>
+            </ul>
+
+            <h3>2. How Data Is Used</h3>
+            <ul>
+                <li><strong>User IDs</strong>: Used to associate contributions and activity with individual users for
+                    tracking and leaderboard purposes.</li>
+                <li><strong>Contribution Data</strong>: Used to display statistics, generate leaderboards, and provide
+                    feedback to users and server admins.</li>
+                <li><strong>Server IDs</strong>: Used to separate and manage data for each server where the bot is
+                    active, and to determine which server's admins can modify/delete a counter.</li>
+            </ul>
+
+            <h3>3. Data Retention</h3>
+            <ul>
+                <li>Data is stored until explicitly deleted by server admins or reset via bot commands.</li>
+                <li>If the bot is removed from a server, associated data may be retained unless deletion is requested.
+                </li>
+            </ul>
+
+            <h3>4. Third Parties</h3>
+            <ul>
+                <li>We do not sell or share your data with third parties.</li>
+                <li>If hosting on third-party infrastructure (e.g., Google Cloud), their policies apply at the
+                    infrastructure level.</li>
+            </ul>
+
+            <h3>5. User Rights</h3>
+            <ul>
+                <li>You may request the deletion of your data via the support server or by contacting the bot developer.
+                </li>
+                <li>Server admins can reset or delete contribution data using bot commands.</li>
+            </ul>
+
+            <h3>6. Changes</h3>
+            <ul>
+                <li>This policy may be updated. Before any change occurs, 2 weeks notice will be provided on this
+                    page and via the bot's <code>/about</code> command. Continued use of the Bot after changes
+                    implies acceptance of the new policy.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <hr>
+        <div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="https://discord.gg/Nj4smPy6N3" target="_blank" rel="noopener">Support Server</a></li>
+                <li><a href="https://discord.com/oauth2/authorize?client_id=1387514006671196231" target="_blank"
+                        rel="noopener">Invite the Bot</a></li>
+            </ul>
+            <ul>
+                <li><a href="/docs/">Documentation</a></li>
+                <li><a href="/docs/commands.html">Command Reference</a></li>
+                <li><a href="/docs/guide.html">Guide</a></li>
+            </ul>
+            <ul>
+                <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div>
+            &copy; 2025 Inquanta &mdash; Inquanta is not affiliated with Discord Inc.
+        </div>
+    </footer>
+</body>
+
+<script>
+    const tocToggle = document.getElementById('toc-toggle');
+    const tocList = document.getElementById('toc-list');
+    tocToggle.addEventListener('click', function () {
+        const isOpen = tocList.style.maxHeight !== '0px';
+        tocList.style.maxHeight = isOpen ? '0px' : '600px';
+        tocList.style.opacity = isOpen ? '0' : '1';
+        tocToggle.setAttribute('aria-expanded', !isOpen);
+    });
+</script>
+
+</html>
